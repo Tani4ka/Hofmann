@@ -49,10 +49,10 @@ jQuery(function() {
 
 	/* iframe */
 
-	$(".video__start_play").click(function() {
-		$("#iframe").css('z-index', '5');
-		$("#iframe")[0].src = "https://www.youtube.com/embed/f77SKdyn-1Y?autoplay=1";
-	});
+	//$(".video__start_play").click(function() {
+	//	$("#iframe").css('z-index', '5');
+	//	$("#iframe")[0].src = "https://www.youtube.com/embed/f77SKdyn-1Y?autoplay=1";
+	//});
 	$(".video__start").click(function() {
 		$("#iframe").css('z-index', '5');
 		$("#iframe")[0].src = "https://www.youtube.com/embed/f77SKdyn-1Y?autoplay=1";

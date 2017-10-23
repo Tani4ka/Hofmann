@@ -112,3 +112,22 @@ header, section, footer {
     background: rgba($black, .5);
   }
 }
+
+.heading {
+  text-transform: none;
+  font-size: $h4-font-size;
+  font-family: "MontserratBold";
+  color: $main;
+  text-align: center;
+  margin: 26px 0;
+  padding: 0 30px;
+
+  @include media("<desktop") {
+    margin: 18px 0;
+    font-size: 3.2em;
+  }
+  @include media("<tablet") {
+    margin: 10px 0;
+    font-size: 1.8em;
+  }
+}
