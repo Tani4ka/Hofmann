@@ -13,6 +13,7 @@ $dark: #1a1a1a;  //for preloader
 
 // Site colors
 $accent: #ebcb80;
+$light-gray: #F6F6F6;
 $gray: #7d7d7d;
 $main: #4b4b4b;
 
@@ -27,7 +28,7 @@ $font-size-base: 16px !default;
 $line-height-base: 1.5em !default;                          // 1.6 standart
 $base-font-family: 'SorceSansProRegular', $base-font-sans-serif !default;
 
-$vertical-rhythm: 20px;
+$vertical-rhythm: 0;
 
 $base-min-width: 320px;
 
@@ -54,9 +55,9 @@ $h2-font-size: 4em !default;        //64px
 $h3-font-size: 3.125em !default;    //50px
 $h4-font-size: 2.75em !default;     //44px
 $h5-font-size: 1em !default;        //16px
-$h6-font-size: 15px !default;
+$h6-font-size: 1em !default;
 
-$headings-font-family: 'MontserratBold' !default;
+$headings-font-family: inherit !default;
 $headings-color: inherit !default;
 
 $animation-speed: 0.3s;

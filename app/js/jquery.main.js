@@ -260,15 +260,8 @@ function initStickyNavbar() {
 
 // align blocks height
 function initSameHeight() {
-	jQuery('.columns-holder').sameHeight({
+	jQuery('.testimo__content').sameHeight({
 		elements: '.column',
-		flexible: true,
-		multiLine: true,
-		biggestHeight: true
-	});
-
-	jQuery('.dashboard-case').sameHeight({
-		elements: '.img',
 		flexible: true,
 		multiLine: true,
 		biggestHeight: true

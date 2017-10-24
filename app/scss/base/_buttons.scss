@@ -3,7 +3,7 @@
    ---------------------------------------------------------*/
 // button DRY
 
-.button {
+.btn {
   position: relative;
   padding: $btn-padding;
   display: inline-block;
@@ -29,6 +29,11 @@
     text-decoration: none;
     color: $white;
     background-color: lighten($btn-background, 5%);
+  }
+  
+  &_dark {
+    background: $main;
+    color: $white;
   }
 
   //&_dark {

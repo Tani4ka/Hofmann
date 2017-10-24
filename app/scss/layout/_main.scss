@@ -13,23 +13,6 @@
     padding: 25px 0 36px;
   }
 
-  .heading__text {
-    text-align: center;
-    font-family: 'MontserratBold';
-    font-size: 1.125em;
-    text-transform: uppercase;
-
-    @include media(">=desktop") {
-      margin-bottom: 60px;
-    }
-    @include media("<desktop") {
-      margin-bottom: 48px;
-    }
-    @include media("<tablet") {
-      margin-bottom: 0;
-    }
-  }
-
   &__img {
     background: url('../img/tv.png') no-repeat 0 0;
     background-size: contain;
@@ -126,11 +109,382 @@
   height: 588px;
   background: $main url("../img/download-bg.jpg") no-repeat center;
   background-size: cover;
+  color: $white;
+  text-align: center;
 
   @include media("<desktop") {
-    height: 362px;
+    height: 314px;
+  }
+  @include media("<tablet") {
+    height: 312px;
+  }
+  
+  &_wrap {
+    margin: auto;
+  }
+  
+  .heading {
+    color: $white;
+    margin-bottom: 16px;
+
+    @include media("<desktop") {
+      margin: 21px 0;
+    }
+    @include media("<tablet") {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__text {
+    padding: 0 15px;
+
+    @include media("<desktop") {
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    @include media("<tablet") {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__btn {
+    margin: 42px 0 60px;
+
+    @include media("<desktop") {
+      padding: 1.1em 3.45em;
+      margin: 0 0 59px;
+    }
+    @include media("<tablet") {
+      padding: 0.74em 3.25em;
+      margin: 4px 0 72px;
+    }
   }
 }
+
+//testimo
+.testimo {
+  padding: 42px 0 11px;
+
+  @include media("<desktop") {
+    padding: 19px 0 15px;
+  }
+  @include media("<tablet") {
+    padding: 28px 0 0;
+  }
+
+  .heading {
+    margin-bottom: 20px;
+  }
+
+  &__content {
+    position: relative;
+    padding: 37px 40px 25px 166px;
+    margin: 0 0 49px 15px;
+    height: 91%;
+    display: flex;
+    flex-direction: column;
+
+    @include media(">=desktop") {
+      &:hover {
+        box-shadow: 0 0 8px 5px #e6e6e6;
+        border-radius: 8px;
+      }
+    }
+    @include media("<desktop") {
+      padding: 31px 40px 18px 104px;
+      margin: 0 0 5px 15px;
+      line-height: 1.5em;
+    }
+    @include media("<tablet") {
+      padding: 2px 10px 18px 58px;
+      margin: 0 0 17px 8px;
+    }
+
+    &:before {
+      content: '';
+      @include size(96px);
+      position: absolute;
+      top: 44px;
+      left: 41px;
+      border-radius: 10em;
+      background: $gray url("../img/person/person-1.jpg") no-repeat;
+      background-size: cover;
+
+      @include media("<desktop") {
+        @include size(62px);
+        top: 32px;
+        left: 14px;
+      }
+      @include media("<tablet") {
+        @include size(48px);
+        top: 10px;
+        left: 0;
+      }
+    }
+    &_second:before  {
+      background: $gray url("../img/person/person-2.jpg") no-repeat;
+      background-size: cover;
+    }
+    &_third:before  {
+      background: $gray url("../img/person/person-3.jpg") no-repeat;
+      background-size: cover;
+    }
+    &_fought:before  {
+      background: $gray url("../img/person/person-4.jpg") no-repeat;
+      background-size: cover;
+    }
+
+    .slesh {
+      position: absolute;
+      top: 180px;
+      left: 67px;
+      @include size(36px);
+
+      @include media("<desktop") {
+        @include size(20px, 18px);
+        top: 126px;
+        left: 35px;
+      }
+      @include media("<tablet") {
+        top: 95px;
+        left: 10px;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 11px;
+        height: 100%;
+        background: #e6e6e6;
+        transform: skew(-15deg);
+
+        @include media("<desktop") {
+          width: 6px;
+        }
+      }
+      &:before {
+        left: 0;
+      }
+      &:after {
+        right: 0;
+      }
+    }
+  }
+
+  &__name {
+    margin: 7px 0 0;
+  }
+
+  &__job {
+    display: block;
+    text-transform: none;
+    color: $gray;
+    text-decoration: none;
+    border-bottom: 1px solid $light-gray;
+    padding-bottom: 15px;
+    margin-bottom: 32px;
+
+    @include media("<desktop") {
+      padding-bottom: 10px;
+      margin: 6px 0 13px;
+    }
+
+    &:hover,
+    &:focus {
+      color: $accent;
+    }
+  }
+
+  .testimo-soc {
+    margin-top: auto;
+    display: flex;
+    @extend %listreset;
+
+    @include media("<desktop") {
+      margin-top: 16px;
+    }
+
+    &__link {
+      color: $accent;
+      margin-right: 12px;
+      font-size: 22px;
+
+      &:hover,
+      &:focus {
+        color: darken($accent, 15%);
+      }
+    }
+  }
+}
+
+/* plan */
+.plan {
+  padding: 38px 0 95px;
+  background: $light-gray;
+
+  @include media("<desktop") {
+    padding: 32px 0 63px;
+  }
+  @include media("<tablet") {
+    padding: 42px 0 80px;
+  }
+}
+
+.card_wrap {
+   position: relative;
+   padding: 17px 0;
+   justify-content: center;
+
+   @include media("<desktop") {
+     padding: 10px 0;
+   }
+   @include media("<tablet") {
+     height: 268px;
+     margin-top: 30px;
+   }
+ }
+
+.card {
+  padding: 44px 0 36px;
+  width: 270px;
+  color: $white;
+  text-align: center;
+  border-radius: 8px;
+
+  @include media("<desktop") {
+    padding: 28px 0 33px;
+    width: 170px;
+  }
+  @include media("<tablet") {
+    padding: 20px 0 29px;
+    position: absolute;
+    width: 191px;
+  }
+
+  &_plat {
+    background: $main;
+
+    @include media("<tablet") {
+      z-index: 1;
+      top: 0;
+      transform: scaleX(0.725);
+    }
+  }
+
+  &_silver {
+    background: #666;
+
+    @include media("<tablet") {
+      z-index: 2;
+      top: 10px;
+      transform: scaleX(0.85);
+    }
+  }
+
+  &_gold {
+    background: $accent;
+    color: $main;
+
+    @include media(">=tablet") {
+      margin: 0 5.8%;
+    }
+    @include media("<tablet") {
+      z-index: 3;
+      top: 20px;
+    }
+    .card__name {
+      color: $main;
+    }
+  }
+  &__name {
+    color: $accent;
+    margin-bottom: 12px;
+
+    @include media("<desktop") {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__number {
+    position: relative;
+    display: inline;
+    padding-left: 10px;
+    font-size: 4em;
+    font-family: 'MontserratBold';
+    line-height: 1.3em;
+
+    @include media("<desktop") {
+      font-size: 3.27em;
+      line-height: 1.0em;
+    }
+    @include media("<tablet") {
+      line-height: 0.3em;
+    }
+
+    &:before {
+      content: '$';
+      position: absolute;
+      top: -2px;
+      left: -10px;
+      font-size: 24px;
+      font-family: 'MontserratRegular';
+
+      @include media("<desktop") {
+        top: 5px;
+        left: 0;
+        font-size: 11px;
+      }
+      @include media("<tablet") {
+        top: 14px;
+      }
+    }
+  }
+
+  &__year {
+    margin-bottom: 27px;
+    font-size: 1.125em;
+    font-family: 'SourceSansProBold';
+    font-size: 1.5em;
+    text-transform: uppercase;
+
+    @include media("<desktop") {
+      margin-bottom: 12px;
+      font-size: 1.09em;
+    }
+    @include media("<tablet") {
+      margin-bottom: 15px;
+      line-height: 1.5em;
+    }
+  }
+
+  &__text {
+    text-transform: capitalize;
+
+    @include media("<desktop") {
+      line-height: 1.5em;
+    }
+  }
+
+  .btn {
+    margin-top: 28px;
+
+    @include media("<desktop") {
+      margin-top: 20px;
+      padding: 1.1em 2.7em;
+
+    }
+    @include media("<tablet") {
+      margin-top: 24px;
+      padding: 0.7em 3.5em;
+    }
+  }
+}
+
+
+
+
 
 
 
