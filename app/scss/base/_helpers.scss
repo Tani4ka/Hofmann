@@ -84,15 +84,15 @@
 //}
 
 
-.hidden-xs {
+.hidden-sm {
   @include media('<tablet') {
     display: none;
   }
 }
 
-.visible-xs {
+.visible-sm {
   @include media('≥tablet') {
-    display: none;
+    display: none !important;
   }
 }
 
