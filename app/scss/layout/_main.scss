@@ -619,11 +619,11 @@
     font-size: 18px;
 
     @include media("<desktop") {
-      margin: 7px auto 0;
+      margin: 45px auto 0;
       font-size: 12px;
     }
     @include media("<tablet") {
-      margin: 0px auto 0;
+      margin: 26px auto 0;
       width: 100%;
     }
 
@@ -637,7 +637,6 @@
       @include media("<tablet") {
         margin: 0 1%;
       }
-
       &:focus,
       &:hover,
       &.slick-active {
@@ -648,7 +647,6 @@
         }
       }
     }
-
     button {
       border: none;
       border-radius: 10em;
@@ -662,6 +660,13 @@
 
 .portf-slick {
   padding-top: 18px;
+
+  @include media("<desktop") {
+    padding-top: 7px;
+  }
+  @include media("<tablet") {
+    padding-top: 0px;
+  }
 }
 
 .portf-figure_wrap {
@@ -669,7 +674,7 @@
   width: 100% !important;
 
   @include media("<desktop") {
-    padding: 6px 25px 0;
+    padding: 0px 25px 0;
   }
   @include media("<tablet") {
     padding: 13px 15px 0;
@@ -707,11 +712,14 @@
     }
   }
   &_6 {
-    background: $light-gray;
     padding: 30px;
 
     @include media("<tablet") {
       width: 100%;
+      height: 145px;
+    }
+    &:hover:before {
+      opacity: 0;
     }
   }
   @include media("<tablet") {
@@ -743,10 +751,24 @@
     left: 0;
     bottom: 0;
     width: 100%;
-    padding: 59px 40px 40px;
+    padding: 48px 40px 40px;
     color: $white;
     opacity: 0;
     @extend %transition;
+    display: flex;
+    align-items: center;
+
+    @include media("<desktop") {
+      padding: 47px 20px 20px;
+    }
+    @include media("<tablet") {
+     padding: 18px 10px 20px 25px;
+      align-items: flex-start;
+    }
+  }
+
+  &__inner {
+    width: 100%;
   }
 
   &__figure:hover {
@@ -755,22 +777,52 @@
     }
   }
 
-  &__figure_2,
-  &__figure_3 {
-    .portf__content {
-      width: 50%;
-      left: 50%;
+  @include media(">=tablet") {
+    &__figure_2,
+    &__figure_3 {
+      .portf__content {
+        width: 50%;
+        left: 50%;
+      }
     }
   }
 
   &__heading {
+    position: relative;
     text-transform: capitalize;
+
+    @include media("<tablet") {
+      font-size: 16px;
+
+      &:before {
+        content: '\e803';
+        position: absolute;
+        top: 5px;
+        right: 17px;
+        color: $white;
+        font-size: 10px;
+        font-family: 'hofmann-icon';
+      }
+    }
+    @include media("<480px") {
+      padding-right: 45px;
+    }
   }
   &__date {
     position: relative;
     padding-bottom: 38px;
     margin: 7px 0 40px;
     font-size: 1.125em;
+    background: transparent !important;
+
+    @include media("<desktop") {
+      margin: 2px 0 24px;
+      padding-bottom: 18px;
+    }
+    @include media("<tablet") {
+      margin: 3px 0 20px;
+      padding-bottom: 16px;
+    }
 
     &:after {
       content: '';
@@ -779,14 +831,29 @@
       bottom: 0;
       @include size(32px, 6px);
       background: $white;
+
+      @include media("<desktop") {
+        @include size(16px, 4px);
+        left: 0;
+      }
+      @include media("<tablet") {
+        @include size(14px, 4px);
+      }
     }
   }
   &__text {
     line-height: 1.5em;
     margin-bottom: 22px;
+    @include media("<desktop") {
+      margin-bottom: 10px;
+    }
   }
   &__status {
     @extend %listreset;
+
+    @include media("<tablet") {
+      display: none;
+    }
 
      &-li {
        position: relative;
@@ -794,12 +861,20 @@
        display: inline-block;
        font-size: 12px;
 
+       @include media("<desktop") {
+         padding: 0 10px 0 25px;
+       }
+
        &:before {
          content: '\e803';
          position: absolute;
          left: 5px;
          top: 0;
          font-family: 'hofmann-icon';
+
+         @include media("<desktop") {
+           left: 0;
+         }
        }
        &:nth-child(2):before {
          content: '\e804';
@@ -809,7 +884,51 @@
        }
      }
   }
+  
+  &__figure_6 {
+    .portf__content {
+      padding: 74px 40px 40px;
+      color: $main;
+      background: $light-gray;
+      opacity: 1;
 
+      @include media("<desktop") {
+        padding: 68px 22px 40px;
+      }
+      @include media("<tablet") {
+        padding: 17px 25px 0px;
+      }
+    }
+    .portf__date {
+      margin-bottom: 30px;
+      padding-bottom: 26px;
+      text-transform: uppercase;
+
+      @include media("<desktop") {
+        margin-bottom: 17px;
+      }
+      @include media("<tablet") {
+        padding-bottom: 7px;
+        margin-bottom: 8px;
+      }
+
+      &:after {
+        background: $main;
+      }
+    }
+    .portf__text {
+      line-height: 1em;
+      text-transform: capitalize;
+
+      @include media("<desktop") {
+        font-size: 36px;
+        line-height: 1.2em;
+      }
+      @include media("<tablet") {
+        font-size: 34px;
+      }
+    }
+  }
 }
 
 
