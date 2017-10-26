@@ -397,7 +397,7 @@
    width: 100%;
 
    @include media("<desktop") {
-     padding: 10px 0;
+     padding: 9px 0;
    }
    @include media("<tablet") {
      height: 268px;
@@ -535,7 +535,6 @@
     @include media("<desktop") {
       margin-top: 20px;
       padding: 1.1em 2.7em;
-
     }
     @include media("<tablet") {
       margin-top: 25px;
@@ -544,25 +543,162 @@
   }
 }
 
+
 /* portfolio section */
 .portf {
-  padding: 50px 0 50px;
-}
-//.slick-track {
-//  width: 100%;
-//}
+  position: relative;
+  padding: 35px 0 71px;
 
-.flex-img_wrap {
+  @include media("<desktop") {
+    padding: 5px 0 71px;
+  }
+  @include media("<tablet") {
+    padding: 27px 0 71px;
+  }
+
+  // arrows
+  .slick-arrow {
+    position: absolute;
+    bottom: 17px;
+    font-size: 0;
+    border: 0;
+    background: transparent;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 13px;
+      height: 13px;
+      border-top: 2px solid $gray;
+      border-left: 2px solid $gray;
+    }
+    &:focus,
+    &:hover {
+      outline: none;
+      &:before,
+      &:after {
+        border-color: $accent;
+      }
+    }
+  }
+  .slick-prev {
+    left: 38.2%;
+
+    @include media("<desktop") {
+      left: 31%;
+    }
+    @include media("<tablet") {
+      left: 13%;
+    }
+    &:before {
+      transform: rotate(-45deg);
+    }
+  }
+  .slick-next {
+    right: 38.2%;
+
+    @include media("<desktop") {
+      right: 31%;
+    }
+    @include media("<tablet") {
+      right: 13%;
+    }
+    &:before {
+      transform: rotate(135deg);
+    }
+  }
+
+  // dots
+  .slick-dots {
+    margin: 64px auto 0;
+    width: 40%;
+    @extend %listreset;
+    text-align: center;
+    font-size: 18px;
+
+    @include media("<desktop") {
+      margin: 7px auto 0;
+      font-size: 12px;
+    }
+    @include media("<tablet") {
+      margin: 0px auto 0;
+      width: 100%;
+    }
+
+    li {
+      display: inline-block;
+      margin: 0 1.5%;
+
+      @include media("<desktop") {
+        margin: 0 2.8%;
+      }
+      @include media("<tablet") {
+        margin: 0 1%;
+      }
+
+      &:focus,
+      &:hover,
+      &.slick-active {
+        button {
+          color: $accent;
+          outline: none;
+          box-shadow: 1px 1px 5px #ccc;
+        }
+      }
+    }
+
+    button {
+      border: none;
+      border-radius: 10em;
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      font-family: 'MontserratRegular';
+    }
+  }
+}
+
+.portf-slick {
+  padding-top: 18px;
+}
+
+.portf-figure_wrap {
+  padding: 0 15px;
   width: 100% !important;
+
+  @include media("<desktop") {
+    padding: 6px 25px 0;
+  }
+  @include media("<tablet") {
+    padding: 13px 15px 0;
+  }
 }
 
-.flex-img {
+.portf__figure {
+  position: relative;
   width: 33.333%;
 
   @include media("<tablet") {
     width: 50%;
   }
-  
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    @extend %transition;
+  }
+  &:hover:before {
+    opacity: 1;
+  }
+
   &_2,
   &_3 {
     width: 66.666%;
@@ -593,12 +729,88 @@
     }
   }
 }
-.flex-image {
+.portf__image {
   display: block;
   width: 100%;
   height: auto;
 }
 
+// content
+.portf {
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 59px 40px 40px;
+    color: $white;
+    opacity: 0;
+    @extend %transition;
+  }
+
+  &__figure:hover {
+    .portf__content {
+      opacity: 1;
+    }
+  }
+
+  &__figure_2,
+  &__figure_3 {
+    .portf__content {
+      width: 50%;
+      left: 50%;
+    }
+  }
+
+  &__heading {
+    text-transform: capitalize;
+  }
+  &__date {
+    position: relative;
+    padding-bottom: 38px;
+    margin: 7px 0 40px;
+    font-size: 1.125em;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 5px;
+      bottom: 0;
+      @include size(32px, 6px);
+      background: $white;
+    }
+  }
+  &__text {
+    line-height: 1.5em;
+    margin-bottom: 22px;
+  }
+  &__status {
+    @extend %listreset;
+
+     &-li {
+       position: relative;
+       padding: 0 20px 0 30px;
+       display: inline-block;
+       font-size: 12px;
+
+       &:before {
+         content: '\e803';
+         position: absolute;
+         left: 5px;
+         top: 0;
+         font-family: 'hofmann-icon';
+       }
+       &:nth-child(2):before {
+         content: '\e804';
+       }
+       &:nth-child(3):before {
+         content: '\e805';
+       }
+     }
+  }
+
+}
 
 
 

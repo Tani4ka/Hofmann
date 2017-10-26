@@ -864,7 +864,7 @@ template {
 /* ---------------------------------------------------------
                            Helpers
    ---------------------------------------------------------*/
-.social, .nav-slide, .testimo .testimo-soc {
+.social, .nav-slide, .testimo .testimo-soc, .portf .slick-dots, .portf__status {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -874,7 +874,7 @@ template {
   display: block;
   clear: both; }
 
-.btn, .top {
+.btn, .top, .portf__figure:before, .portf__content {
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
@@ -1037,7 +1037,7 @@ h4, .h4 {
   font-size: 2.75em; }
 
 h5, .h5 {
-  font-size: 1em; }
+  font-size: 2em; }
 
 h6, .h6 {
   font-size: 1em; }
@@ -2185,7 +2185,7 @@ header, section, footer {
   width: 100%; }
   @media (max-width: 1023px) {
     .card_wrap {
-      padding: 10px 0; } }
+      padding: 9px 0; } }
   @media (max-width: 767px) {
     .card_wrap {
       height: 268px;
@@ -2311,61 +2311,222 @@ header, section, footer {
 
 /* portfolio section */
 .portf {
-  padding: 50px 0 50px; }
+  position: relative;
+  padding: 35px 0 71px; }
+  @media (max-width: 1023px) {
+    .portf {
+      padding: 5px 0 71px; } }
+  @media (max-width: 767px) {
+    .portf {
+      padding: 27px 0 71px; } }
+  .portf .slick-arrow {
+    position: absolute;
+    bottom: 17px;
+    font-size: 0;
+    border: 0;
+    background: transparent; }
+    .portf .slick-arrow:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 13px;
+      height: 13px;
+      border-top: 2px solid #7d7d7d;
+      border-left: 2px solid #7d7d7d; }
+    .portf .slick-arrow:focus, .portf .slick-arrow:hover {
+      outline: none; }
+      .portf .slick-arrow:focus:before, .portf .slick-arrow:focus:after, .portf .slick-arrow:hover:before, .portf .slick-arrow:hover:after {
+        border-color: #ebcb80; }
+  .portf .slick-prev {
+    left: 38.2%; }
+    @media (max-width: 1023px) {
+      .portf .slick-prev {
+        left: 31%; } }
+    @media (max-width: 767px) {
+      .portf .slick-prev {
+        left: 13%; } }
+    .portf .slick-prev:before {
+      -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg); }
+  .portf .slick-next {
+    right: 38.2%; }
+    @media (max-width: 1023px) {
+      .portf .slick-next {
+        right: 31%; } }
+    @media (max-width: 767px) {
+      .portf .slick-next {
+        right: 13%; } }
+    .portf .slick-next:before {
+      -webkit-transform: rotate(135deg);
+          -ms-transform: rotate(135deg);
+              transform: rotate(135deg); }
+  .portf .slick-dots {
+    margin: 64px auto 0;
+    width: 40%;
+    text-align: center;
+    font-size: 18px; }
+    @media (max-width: 1023px) {
+      .portf .slick-dots {
+        margin: 7px auto 0;
+        font-size: 12px; } }
+    @media (max-width: 767px) {
+      .portf .slick-dots {
+        margin: 0px auto 0;
+        width: 100%; } }
+    .portf .slick-dots li {
+      display: inline-block;
+      margin: 0 1.5%; }
+      @media (max-width: 1023px) {
+        .portf .slick-dots li {
+          margin: 0 2.8%; } }
+      @media (max-width: 767px) {
+        .portf .slick-dots li {
+          margin: 0 1%; } }
+      .portf .slick-dots li:focus button, .portf .slick-dots li:hover button, .portf .slick-dots li.slick-active button {
+        color: #ebcb80;
+        outline: none;
+        -webkit-box-shadow: 1px 1px 5px #ccc;
+                box-shadow: 1px 1px 5px #ccc; }
+    .portf .slick-dots button {
+      border: none;
+      -webkit-border-radius: 10em;
+              border-radius: 10em;
+      width: 32px;
+      height: 32px;
+      background: transparent;
+      font-family: 'MontserratRegular'; }
 
-.flex-img_wrap {
+.portf-slick {
+  padding-top: 18px; }
+
+.portf-figure_wrap {
+  padding: 0 15px;
   width: 100% !important; }
+  @media (max-width: 1023px) {
+    .portf-figure_wrap {
+      padding: 6px 25px 0; } }
+  @media (max-width: 767px) {
+    .portf-figure_wrap {
+      padding: 13px 15px 0; } }
 
-.flex-img {
+.portf__figure {
+  position: relative;
   width: 33.333%; }
   @media (max-width: 767px) {
-    .flex-img {
+    .portf__figure {
       width: 50%; } }
-  .flex-img_2, .flex-img_3 {
+  .portf__figure:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 0; }
+  .portf__figure:hover:before {
+    opacity: 1; }
+  .portf__figure_2, .portf__figure_3 {
     width: 66.666%; }
     @media (max-width: 767px) {
-      .flex-img_2, .flex-img_3 {
+      .portf__figure_2, .portf__figure_3 {
         width: 100%; } }
-  .flex-img_6 {
+  .portf__figure_6 {
     background: #F6F6F6;
     padding: 30px; }
     @media (max-width: 767px) {
-      .flex-img_6 {
+      .portf__figure_6 {
         width: 100%; } }
   @media (max-width: 767px) {
-    .flex-img_2 {
+    .portf__figure_2 {
       -webkit-box-ordinal-group: 3;
       -webkit-order: 2;
           -ms-flex-order: 2;
               order: 2; }
-    .flex-img_3 {
+    .portf__figure_3 {
       -webkit-box-ordinal-group: 5;
       -webkit-order: 4;
           -ms-flex-order: 4;
               order: 4; }
-    .flex-img_4, .flex-img_5 {
+    .portf__figure_4, .portf__figure_5 {
       -webkit-box-ordinal-group: 4;
       -webkit-order: 3;
           -ms-flex-order: 3;
               order: 3; }
-    .flex-img_6 {
+    .portf__figure_6 {
       -webkit-box-ordinal-group: 7;
       -webkit-order: 6;
           -ms-flex-order: 6;
               order: 6; } }
 
-.flex-image {
+.portf__image {
   display: block;
   width: 100%;
   height: auto; }
+
+.portf__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 59px 40px 40px;
+  color: #fff;
+  opacity: 0; }
+
+.portf__figure:hover .portf__content {
+  opacity: 1; }
+
+.portf__figure_2 .portf__content, .portf__figure_3 .portf__content {
+  width: 50%;
+  left: 50%; }
+
+.portf__heading {
+  text-transform: capitalize; }
+
+.portf__date {
+  position: relative;
+  padding-bottom: 38px;
+  margin: 7px 0 40px;
+  font-size: 1.125em; }
+  .portf__date:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    bottom: 0;
+    width: 32px;
+    height: 6px;
+    background: #fff; }
+
+.portf__text {
+  line-height: 1.5em;
+  margin-bottom: 22px; }
+
+.portf__status-li {
+  position: relative;
+  padding: 0 20px 0 30px;
+  display: inline-block;
+  font-size: 12px; }
+  .portf__status-li:before {
+    content: '\e803';
+    position: absolute;
+    left: 5px;
+    top: 0;
+    font-family: 'hofmann-icon'; }
+  .portf__status-li:nth-child(2):before {
+    content: '\e804'; }
+  .portf__status-li:nth-child(3):before {
+    content: '\e805'; }
 
 /* ---------------------------------------------------------
                             Footer
    ---------------------------------------------------------*/
 @font-face {
   font-family: 'hofmann-icon';
-  src: url("../fonts/fontello/hofmann-icon.eot?52886482");
-  src: url("../fonts/fontello/hofmann-icon.eot?52886482#iefix") format("embedded-opentype"), url("../fonts/fontello/hofmann-icon.woff2?52886482") format("woff2"), url("../fonts/fontello/hofmann-icon.woff?52886482") format("woff"), url("../fonts/fontello/hofmann-icon.ttf?52886482") format("truetype"), url("../fonts/fontello/hofmann-icon.svg?52886482#hofmann-icon") format("svg");
+  src: url("../fonts/fontello/hofmann-icon.eot?22558355");
+  src: url("../fonts/fontello/hofmann-icon.eot?22558355#iefix") format("embedded-opentype"), url("../fonts/fontello/hofmann-icon.woff2?22558355") format("woff2"), url("../fonts/fontello/hofmann-icon.woff?22558355") format("woff"), url("../fonts/fontello/hofmann-icon.ttf?22558355") format("truetype"), url("../fonts/fontello/hofmann-icon.svg?22558355#hofmann-icon") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -2375,7 +2536,7 @@ header, section, footer {
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'hofmann-icon';
-    src: url('../font/hofmann-icon.svg?52886482#hofmann-icon') format('svg');
+    src: url('../font/hofmann-icon.svg?22558355#hofmann-icon') format('svg');
   }
 }
 */
@@ -2406,7 +2567,7 @@ header, section, footer {
   /* Uncomment for 3D effect */
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
 
-.icon-computer:before {
+.icon-devices:before {
   content: '\e800'; }
 
 /* '' */
@@ -2414,10 +2575,22 @@ header, section, footer {
   content: '\e801'; }
 
 /* '' */
-.icon-perfect:before {
+.icon-diamond:before {
   content: '\e802'; }
 
 /* '' */
+.icon-eye:before {
+  content: '\e803'; }
+
+/* '' */
+.icon-likes:before {
+  content: '\e804'; }
+
+/* '' */
+.icon-comments:before {
+  content: '\e805'; }
+
+/* '' */
 /* Slider */
 .slick-slider {
   position: relative;
