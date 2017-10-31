@@ -547,13 +547,17 @@
 /* portfolio section */
 .portf {
   position: relative;
-  padding: 35px 0 71px;
+  padding: 35px 0 75px;
 
   @include media("<desktop") {
     padding: 5px 0 71px;
   }
   @include media("<tablet") {
     padding: 27px 0 71px;
+  }
+  
+  .slick-slide:focus {
+    outline: none;
   }
 
   // arrows
@@ -612,7 +616,7 @@
 
   // dots
   .slick-dots {
-    margin: 64px auto 0;
+    margin: 61px auto 0;
     width: 40%;
     @extend %listreset;
     text-align: center;
@@ -704,6 +708,10 @@
     opacity: 1;
   }
 
+  &:focus {
+    outline: none;
+  }
+  
   &_2,
   &_3 {
     width: 66.666%;
@@ -757,18 +765,19 @@
     @extend %transition;
     display: flex;
     align-items: center;
+    overflow: hidden;
 
     @include media("<desktop") {
       padding: 47px 20px 20px;
     }
     @include media("<tablet") {
-     padding: 18px 10px 20px 25px;
-      align-items: flex-start;
+     padding: 0px 20px 0px 27px;
     }
   }
 
   &__inner {
     width: 100%;
+    position: relative;
   }
 
   &__figure:hover {
@@ -793,19 +802,7 @@
 
     @include media("<tablet") {
       font-size: 16px;
-
-      &:before {
-        content: '\e803';
-        position: absolute;
-        top: 5px;
-        right: 17px;
-        color: $white;
-        font-size: 10px;
-        font-family: 'hofmann-icon';
-      }
-    }
-    @include media("<480px") {
-      padding-right: 45px;
+      padding-right: 55px;
     }
   }
   &__date {
@@ -844,25 +841,36 @@
   &__text {
     line-height: 1.5em;
     margin-bottom: 22px;
+
     @include media("<desktop") {
       margin-bottom: 10px;
     }
-  }
-  &__status {
-    @extend %listreset;
-
-    @include media("<tablet") {
+    @include media("<400px") {
       display: none;
     }
+  }
+  &__status {
 
-     &-li {
+     &-link {
        position: relative;
        padding: 0 20px 0 30px;
        display: inline-block;
        font-size: 12px;
+       color: $white;
+       text-decoration: none;
 
        @include media("<desktop") {
          padding: 0 10px 0 25px;
+       }
+       @include media("<tablet") {
+         display: none;
+       }
+
+       &:focus,
+       &:hover {
+         outline: none;
+         color: $accent;
+         cursor: pointer;
        }
 
        &:before {
@@ -882,12 +890,26 @@
        &:nth-child(3):before {
          content: '\e805';
        }
+
+       &_eye {
+         @include media("<tablet") {
+           position: absolute;
+           top: 0px;
+           right: 9px;
+           font-size: 0;
+           display: block;
+
+           &:before {
+             font-size: 10px;
+           }
+         }
+       }
      }
   }
   
   &__figure_6 {
     .portf__content {
-      padding: 74px 40px 40px;
+      padding: 75px 40px 40px;
       color: $main;
       background: $light-gray;
       opacity: 1;
@@ -901,10 +923,11 @@
     }
     .portf__date {
       margin-bottom: 30px;
-      padding-bottom: 26px;
+      padding-bottom: 38px;
       text-transform: uppercase;
 
       @include media("<desktop") {
+        padding-bottom: 26px;
         margin-bottom: 17px;
       }
       @include media("<tablet") {
@@ -927,13 +950,187 @@
       @include media("<tablet") {
         font-size: 34px;
       }
+      @include media("<400px") {
+        display: block;
+      }
     }
   }
 }
 
+/* category */
+
+.reviews_wrap {
+  padding: 226px 0 67px;
+  color: $white;
+  background: $main url("../img/category-bg.jpg") no-repeat;
+  background-size: cover;
+
+  @include media("<desktop") {
+    padding: 103px 0 15px;
+  }
+  @include media("<tablet") {
+    padding: 35px 0 58px;
+  }
+
+  &.overlay:before {
+    background: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.reviews {
+  padding: 0 100px 0 18px;
+
+  @include media("<desktop") {
+    padding: 0 80px 0 15px;
+  }
+  @include media("<tablet") {
+    padding: 0 30px 0 26px;
+  }
+
+  &:focus,
+  &__item:focus {
+    outline: none;
+  }
+
+  &__heading {
+    margin-bottom: 12px;
+    font-family: 'MontserratRegular';
+    text-transform: capitalize;
+
+    @include media("<desktop") {
+      margin-bottom: 3px;
+    }
+  }
+
+  &__prof {
+    margin-bottom: 25px;
+    display: block;
+    font-size: 1.125em;
+    text-transform: uppercase;
+    font-family: 'SourceSansProRegular';
+
+    @include media("<desktop") {
+      margin-bottom: 11px;
+    }
+    @include media("<tablet") {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    @include media("<desktop") {
+      line-height: 1.5;
+    }
+  }
+
+  .slick-dots {
+    list-style-type: none;
+    position: absolute;
+    font-size: 0;
+    z-index: 10;
 
 
+    @include media(">=tablet") {
+      right: 20px;
+      top: 50%;
+      transform: translateY(-40%);
+    }
+    @include media(">=desktop") {
+       right: 0;
+      transform: translateY(-50%);
+    }
+    @include media("<tablet") {
+      bottom: -35px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
 
+    li {
+      @include size(10px);
+      margin: 11px 0;
+
+      @include media("<desktop") {
+        margin: 7px 0;
+      }
+
+      @include media("<tablet") {
+        display: inline-block;
+        margin: 0 4px;
+      }
+    }
+
+    button {
+      @include size(10px);
+      border-radius: 50%;
+      background: transparent;
+      border: 2px solid $white;
+      padding: 0;
+
+      @include media("<desktop") {
+        @include size(8px);
+      }
+    }
+
+    li:focus,
+    button:focus {
+      outline: none;
+    }
+
+    .slick-active {
+      button {
+        background: $white;
+      }
+    }
+  }
+}
+
+/* touch */
+.touch {
+  margin: 62px 0 36px;
+
+  @include media("<desktop") {
+    margin: 36px 0 36px;
+  }
+  
+  &__iphone {
+    height: 100%;
+    background: url("../img/iPhone.png") no-repeat;
+  }
+
+  .touch__input {
+    width: 45%;
+    margin-right: 15px;
+    margin-bottom: 30px;
+    padding: 10px 0;
+    color: $main;
+    border: none;
+    border-bottom: 1px solid $gray;
+
+    &:focus {
+      outline: none;
+      border-color: $gray;
+    }
+
+    &_message {
+      display: block;
+      margin-bottom: 60px;
+      padding: 10px 0;
+      width: 95%;
+    }
+
+    &::-webkit-input-placeholder { color: $gray; }
+    &::-moz-placeholder { color: $gray; }
+    &:-moz-placeholder  { color: $gray; }
+    &:-ms-input-placeholder { color: $gray; }
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto;
+  }
+
+
+}
 
 
 

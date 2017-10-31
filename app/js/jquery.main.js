@@ -166,6 +166,19 @@ function initSlickCarousel() {
 		slidesToScroll: 1,
 		responsive: true
 	});
+
+	jQuery('.reviews').slick({
+		dots: true,
+		prevArrow: false,
+		nextArrow: false,
+		infinite: true,
+		speed: 300,
+		autoplay: false,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		//vertical: true,
+		//verticalSwiping: true
+	});
 }
 
 // cycle scroll gallery init
