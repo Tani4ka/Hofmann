@@ -1085,37 +1085,75 @@
 }
 
 /* touch */
-.touch {
-  margin: 62px 0 36px;
+.touch_wrap {
+  margin: 62px 0 0;
 
   @include media("<desktop") {
-    margin: 36px 0 36px;
+    margin: 30px 0 0;
   }
-  
+}
+.touch {
+  margin-top: 63px;
+  margin-bottom: 67px;
+
+  @include media("<desktop") {
+    margin-top: 39px;
+    margin-bottom: 39px;
+    padding: 0 12px;
+  }
+  @include media("<tablet") {
+    margin-top: 23px;
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  &__heading {
+    margin-bottom: 0;
+  }
+
   &__iphone {
     height: 100%;
     background: url("../img/iPhone.png") no-repeat;
   }
 
+  &__form {
+    @include media(">=desktop") {
+      padding: 0 12px;
+    }
+  }
+
   .touch__input {
-    width: 45%;
-    margin-right: 15px;
-    margin-bottom: 30px;
-    padding: 10px 0;
-    color: $main;
+    margin-bottom: 41px;
+    padding: 2px 0 8px;
+    width: 46%;
     border: none;
     border-bottom: 1px solid $gray;
+    color: $main;
+    font-size: 1.125em;
+
+    @include media("<desktop") {
+      padding: 2px 0 3px;
+      margin-bottom: 20px;
+    }
 
     &:focus {
       outline: none;
       border-color: $gray;
     }
-
+    &_name {
+      margin-right: 7%;
+    }
     &_message {
       display: block;
       margin-bottom: 60px;
-      padding: 10px 0;
-      width: 95%;
+      width: 100%;
+
+      @include media("<desktop") {
+        margin-bottom: 31px;
+      }
+      @include media("<tablet") {
+        margin-bottom: 19px;
+      }
     }
 
     &::-webkit-input-placeholder { color: $gray; }
@@ -1127,14 +1165,125 @@
   &__btn {
     display: block;
     margin: 0 auto;
+    padding: 0.75em 4.6em;
+
   }
 
+  &__adress,
+  &__email,
+  &__tel_wrap {
+    padding: 0 30px;
+    margin-bottom: 24px;
+    display: block;
+    position: relative;
+    color: $main;
+    text-decoration: none;
+    @extend %transition;
 
+    @include media("<desktop") {
+      margin-bottom: 8px;
+    }
+    @include media("<tablet") {
+      line-height: 1.5em;
+    }
+
+    &:before {
+      content: '\f0e0';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 18px;
+      text-align: center;
+      font-family: 'fontawesome';
+
+      @include media("<desktop") {
+        font-size: 1.55em;
+      }
+    }
+  }
+  &__adress:before {
+    content: '\f041';
+  }
+
+  &__email,
+  &__tel_wrap {
+    &:hover {
+      color: darken($accent, 10%);
+    }
+  }
+
+  &__tel_wrap {
+    margin-bottom: 40px;
+
+    @include media("<desktop") {
+      margin-bottom: 17px;
+    }
+    @include media("<tablet") {
+      margin-bottom: 22px;
+    }
+    &:before {
+      content: '\f095';
+    }
+  }
+
+  &__tel {
+    white-space: nowrap;
+    color: $main;
+    text-decoration: none;
+    @extend %transition;
+
+    &:hover {
+      color: darken($accent, 10%);
+    }
+  }
+
+  //social
+  &-soc {
+    display: flex;
+    flex-wrap: wrap;
+    @extend %listreset;
+    font-size: 1.563em;
+
+    @include media("<desktop") {
+      font-size: 2em;
+    }
+
+    li+li {
+      margin-left: 12.5%;
+
+      @include media("<desktop") {
+        margin-left: 30px;
+      }
+      @include media("<tablet") {
+        margin-left: 34px;
+      }
+    }
+
+    &__link {
+      color: $gray;
+      @extend %transition;
+
+      &:hover,
+      &:focus {
+        color: darken($accent, 10%);
+      }
+    }
+  }
 }
 
 
-
-
+#map {
+  width: 100%;
+  height: 400px;
+  background: $light-gray;
+}
+#tooltip {
+  position: absolute;
+  top: 100px;
+  left: 500px;
+  @include size(190px, 82px);
+  background: $accent;
+}
 
 
 

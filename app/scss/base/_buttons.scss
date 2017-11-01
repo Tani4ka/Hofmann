@@ -26,8 +26,6 @@
   &:focus,
   &:hover,
   &:active {
-    text-decoration: none;
-    color: $white;
     background-color: lighten($btn-background, 5%);
   }
   

@@ -754,23 +754,35 @@
 
 
 		<!-- section last start -->
-		<section class="touch">
-			<h4 class="h4 heading">Stay in touch</h4>
+		<section class="touch_wrap">
+			<h4 class="h4 heading touch__heading">Stay in touch</h4>
 
-			<div class="wrap-flex">
-				<div class="col-lg-4 visible-lg">
-					<div class="touch__iphone"></div>
-				</div>
-				<div class="col-lg-5 col-md-5 col-sm-10">
-					<form action="">
-						<input class="touch__input" type="text" placeholder="Name*" />
+			<div class="wrap-flex flex-start">
+				<div class="col-lg-4 visible-lg"><div class="touch__iphone"></div></div>
+
+				<div class="touch col-lg-4 offset-lg-0 col-md-5 offset-md-1 col-sm-10 offset-sm-1">
+					<form action="" class="touch__form">
+						<input class="touch__input touch__input_name" type="text" placeholder="Name*" />
 						<input class="touch__input" type="email" placeholder="Email*"/>
 						<input class="touch__input touch__input_message" type="text" placeholder="Message*"/>
 						<button class="btn touch__btn">Submit</button>
 					</form>
 				</div>
-				<div class="col-lg-3 col-md-5 col-sm-10">
-					<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, magni!</div>
+
+				<div class="touch col-lg-3 offset-lg-1 col-md-5  offset-md-0 col-sm-10  offset-sm-1">
+					<div class="touch__adress">2300 W Arbutus Dr Citrus Springs, FL 34434, USA</div>
+					<a class="touch__email" href="mailto:http://contact@hofmannui.net">contact@hofmannui.net</a>
+					<div class="touch__tel_wrap">
+						<a class="touch__tel" href="tel:793-891-7938">793-891-7938,</a>
+						<a class="touch__tel" href="tel:952-775-6021">952-775-6021</a>
+					</div>
+					<ul class="touch-soc">
+						<li><a class="touch-soc__link" href="#"><i class="fa fa-pinterest"></i></a></li>
+						<li><a class="touch-soc__link" href="#"><i class="fa fa-linkedin-square"></i></a></li>
+						<li><a class="touch-soc__link" href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a class="touch-soc__link" href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a class="touch-soc__link" href="#"><i class="fa fa-facebook-official"></i></a></li>
+					</ul>
 				</div>
 
 			</div>
@@ -780,14 +792,9 @@
 
 
 		<!-- section last start -->
-		<section style="background: #c1c1c1;" class="last">
-			<div class="wrap-flex_center">
-				<div class="col-lg-8 col-md-8 col-sm-10">
-					<h4 class="heading">Get your free version</h4>
-					<p class="download__text">Having used discount toner cartridges for twenty years, there have been a lot of changes in the toner cartridge market. The market today is approximately a twenty billion dollar business.</p>
-				</div>
-			</div>
-
+		<section class="map">
+			<div id="map"></div>
+			<div id="tooltip">2300 W Arbutus Dr Citrus Springs, FL 34434, USA</div>
 		</section>
 		<!-- section last end -->
 	</div>
@@ -826,6 +833,114 @@
 	<!-- include custom JavaScript -->
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
 	<script type="text/javascript" src="js/jquery.main.min.js" defer></script>
+
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+	<script type="text/javascript">
+		google.maps.event.addDomListener(window, 'load', init);
+		function init() {
+			// https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+			var mapOptions = {
+				zoom: 17,
+				center: new google.maps.LatLng(29.017624, -82.474762),
+
+				styles: [
+					{
+						"featureType": "all",
+						"elementType": "labels.text.fill",
+						"stylers": [
+							{
+								"saturation": 36
+							},
+							{
+								"color": "#333333"
+							},
+							{
+								"lightness": 40
+							}
+						]
+					},
+					{
+						"featureType": "all",
+						"elementType": "labels.text.stroke",
+						"stylers": [
+							{
+								"visibility": "on"
+							},
+							{
+								"color": "#ffffff"
+							},
+							{
+								"lightness": 16
+							}
+						]
+					},
+					{
+						"featureType": "all",
+						"elementType": "labels.icon",
+						"stylers": [
+							{
+								"visibility": "off"
+							}
+						]
+					},
+					{
+						"featureType": "administrative",
+						"elementType": "geometry.stroke",
+						"stylers": [
+							{
+								"lightness": 17
+							},
+							{
+								"weight": 1.2
+							},
+							{
+								"color": "#e5e5e5"
+							}
+						]
+					},
+					{
+						"featureType": "landscape.man_made",
+						"elementType": "geometry.fill",
+						"stylers": [
+							{
+								"color": "#e5e5e5"
+							}
+						]
+					},
+					{
+						"featureType": "road.highway",
+						"elementType": "geometry.fill",
+						"stylers": [
+							{
+								"color": "#ffffff"
+							},
+							{
+								"lightness": 17
+							}
+						]
+					},
+					{
+						"featureType": "road.local",
+						"elementType": "labels.text.fill",
+						"stylers": [
+							{
+								"color": "#2b2b2b"
+							}
+						]
+					}
+				]
+			};
+
+			var mapElement = document.getElementById('map');
+			var map = new google.maps.Map(mapElement, mapOptions);
+			
+//			var marker = new google.maps.Marker({
+//				position: new google.maps.LatLng(29.017624, -82.474762),
+//				map: map
+//			});
+		}
+	</script>
 
 </body>
 </html>
