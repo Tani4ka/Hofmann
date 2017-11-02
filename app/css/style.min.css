@@ -1516,7 +1516,7 @@ header, section, footer {
                            Header
    ---------------------------------------------------------*/
 .header {
-  background-image: url("../img/header_bg.jpg"); }
+  background-image: url("/img/header_bg.jpg"); }
   .header__heading {
     position: relative;
     color: #fff;
