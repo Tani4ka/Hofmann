@@ -2813,7 +2813,10 @@ header, section, footer {
     margin-bottom: 0; }
   .touch__iphone {
     height: 100%;
-    background: url("../img/iPhone.png") no-repeat; }
+    background: url("../img/iPhone.png") no-repeat;
+    -webkit-background-size: contain;
+            background-size: contain;
+    background-position: 50%  100%; }
   @media (min-width: 1024px) {
     .touch__form {
       padding: 0 12px; } }
@@ -2833,7 +2836,7 @@ header, section, footer {
       outline: none;
       border-color: #7d7d7d; }
     .touch .touch__input_name {
-      margin-right: 7%; }
+      margin-right: 6%; }
     .touch .touch__input_message {
       display: block;
       margin-bottom: 60px;
@@ -2924,6 +2927,10 @@ header, section, footer {
       color: #7d7d7d; }
       .touch-soc__link:hover, .touch-soc__link:focus {
         color: #e4b954; }
+
+.map {
+  position: relative;
+  overflow: hidden; }
 
 #map {
   width: 100%;
