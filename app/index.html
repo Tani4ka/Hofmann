@@ -716,7 +716,7 @@
 		<!-- section portfolio end -->
 
 
-		<!-- section category start -->
+		<!-- section reviews start -->
 		<section class="reviews_wrap overlay">
 			<div class="wrap-flex flex-end">
 				<div class="reviews col-lg-5 col-md-6 col-sm-12">
@@ -750,10 +750,10 @@
 				</div>
 			</div>
 		</section>
-		<!-- section category end -->
+		<!-- section reviews end -->
 
 
-		<!-- section last start -->
+		<!-- section touch start -->
 		<section class="touch_wrap">
 			<h4 class="h4 heading touch__heading">Stay in touch</h4>
 
@@ -788,15 +788,19 @@
 			</div>
 
 		</section>
-		<!-- section last end -->
+		<!-- section touch end -->
 
 
-		<!-- section last start -->
+		<!-- section map start -->
 		<section class="map">
 			<div id="map"></div>
-			<div id="tooltip">2300 W Arbutus Dr Citrus Springs, FL 34434, USA</div>
+			<div class="tooltip"><span class="tooltip_bold">2300 W Arbutus Dr </span>Citrus Springs, FL 34434, USA</div>
 		</section>
-		<!-- section last end -->
+		<!-- section map end -->
+
+		<!-- section map start -->
+		<footer style="height: 300px; background: #4b4b4b;"></footer>
+		<!-- section map end -->
 	</div>
 
 
@@ -835,110 +839,36 @@
 	<script type="text/javascript" src="js/jquery.main.min.js" defer></script>
 
 	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-
+	<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeuJagmRSYdoztof5OHCqXW3j9BtJMVW8&callback=initMap" async defer></script>-->
 	<script type="text/javascript">
 		google.maps.event.addDomListener(window, 'load', init);
 		function init() {
 			// https://developers.google.com/maps/documentation/javascript/reference#MapOptions
 			var mapOptions = {
+				center: new google.maps.LatLng(29.017224, -82.473262),
 				zoom: 17,
-				center: new google.maps.LatLng(29.017624, -82.474762),
+				mapTypeControl: false,
+				zoomControl: false,
+				scaleControl: true,
+				fullscreenControl: false,
+				streetViewControl: false,  //yellow men
 
-				styles: [
-					{
-						"featureType": "all",
-						"elementType": "labels.text.fill",
-						"stylers": [
-							{
-								"saturation": 36
-							},
-							{
-								"color": "#333333"
-							},
-							{
-								"lightness": 40
-							}
-						]
-					},
-					{
-						"featureType": "all",
-						"elementType": "labels.text.stroke",
-						"stylers": [
-							{
-								"visibility": "on"
-							},
-							{
-								"color": "#ffffff"
-							},
-							{
-								"lightness": 16
-							}
-						]
-					},
-					{
-						"featureType": "all",
-						"elementType": "labels.icon",
-						"stylers": [
-							{
-								"visibility": "off"
-							}
-						]
-					},
-					{
-						"featureType": "administrative",
-						"elementType": "geometry.stroke",
-						"stylers": [
-							{
-								"lightness": 17
-							},
-							{
-								"weight": 1.2
-							},
-							{
-								"color": "#e5e5e5"
-							}
-						]
-					},
-					{
-						"featureType": "landscape.man_made",
-						"elementType": "geometry.fill",
-						"stylers": [
-							{
-								"color": "#e5e5e5"
-							}
-						]
-					},
-					{
-						"featureType": "road.highway",
-						"elementType": "geometry.fill",
-						"stylers": [
-							{
-								"color": "#ffffff"
-							},
-							{
-								"lightness": 17
-							}
-						]
-					},
-					{
-						"featureType": "road.local",
-						"elementType": "labels.text.fill",
-						"stylers": [
-							{
-								"color": "#2b2b2b"
-							}
-						]
-					}
-				]
-			};
+				styles: [{"featureType": "all", "elementType": "labels.text.fill", "stylers": [{"saturation": 36}, {"color": "#333333"}, {"lightness": 40}]},
+						{"featureType": "all", "elementType": "labels.text.stroke", "stylers": [{"visibility": "on"}, {"color": "#ffffff"}, {"lightness": 16}]},
+						{"featureType": "all", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]},
+						{"featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{"lightness": 17}, {"weight": 1.2}, {"color": "#e5e5e5"}]},
+						{"featureType": "landscape.man_made", "elementType": "geometry.fill", "stylers": [{"color": "#e5e5e5"}]},
+						{"featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"}, {"lightness": 17}]},
+						{"featureType": "road.local", "elementType": "labels.text.fill", "stylers": [{"color": "#2b2b2b"}]}]
+			}
 
 			var mapElement = document.getElementById('map');
 			var map = new google.maps.Map(mapElement, mapOptions);
-			
-//			var marker = new google.maps.Marker({
-//				position: new google.maps.LatLng(29.017624, -82.474762),
-//				map: map
-//			});
+
+			var center = map.getCenter();
+			google.maps.event.addDomListener(window, 'resize', function() {
+				map.setCenter(center);
+			});
 		}
 	</script>
 

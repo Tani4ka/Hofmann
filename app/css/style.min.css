@@ -2929,14 +2929,48 @@ header, section, footer {
   width: 100%;
   height: 400px;
   background: #F6F6F6; }
+  @media (max-width: 1023px) {
+    #map {
+      height: 216px; } }
+  @media (max-width: 767px) {
+    #map {
+      height: 268px; } }
 
-#tooltip {
+.tooltip {
   position: absolute;
-  top: 100px;
-  left: 500px;
-  width: 190px;
-  height: 82px;
-  background: #ebcb80; }
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-45%);
+      -ms-transform: translateX(-45%);
+          transform: translateX(-45%);
+  padding: 19px 16px 21px 28px;
+  -webkit-border-radius: 4px;
+          border-radius: 4px;
+  background: #ebcb80;
+  font-size: 12px;
+  white-space: nowrap;
+  line-height: 1.3em;
+  -webkit-filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5)); }
+  @media (max-width: 1023px) {
+    .tooltip {
+      top: 32%; } }
+  @media (max-width: 767px) {
+    .tooltip {
+      top: 35%; } }
+  .tooltip:before {
+    content: '';
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    border-left: 20px solid #ebcb80;
+    border-bottom: 15px solid transparent;
+    -webkit-transform: translateX(-25%) rotate(-27deg);
+        -ms-transform: translateX(-25%) rotate(-27deg);
+            transform: translateX(-25%) rotate(-27deg); }
+  .tooltip_bold {
+    display: block;
+    font-family: 'SourceSansProBold'; }
 
 /* ---------------------------------------------------------
                             Footer
