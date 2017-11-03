@@ -26,12 +26,18 @@
   &:focus,
   &:hover,
   &:active {
-    background-color: lighten($btn-background, 5%);
+    background-color: darken($btn-background, 10%);
   }
   
   &_dark {
     background: $main;
     color: $white;
+
+    &:focus,
+    &:hover,
+    &:active {
+      background-color: darken($main, 10%);
+    }
   }
 
   //&_dark {
