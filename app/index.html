@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
 
@@ -23,6 +23,8 @@
 	<meta name="msapplication-navbutton-color" content="#000">
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+	<!-- For preloader -->
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
 
 </head>
 
@@ -35,14 +37,14 @@
 		<header class="header overlay">
 
 			<div class="top-line wrap-flex">
-				<div class="logo">
+				<a href="#" class="logo">
 					<picture id="logo-picturefill">
 						<source srcset="img/logo-small.png" media="(max-width: 767px)">
 						<source srcset="img/logo-medium.png" media="(max-width: 1023px)">
 						<source srcset="img/logo-large.png">
-						<img class="img" csrcset="img/logo-large.png" alt="Logo image">
+						<img class="img" src="img/logo-large.png" alt="Logo image">
 					</picture>
-				</div>
+				</a>
 
 				<div id="nav">
 					<a href="#" class="nav-opener"><span></span></a>
@@ -55,19 +57,25 @@
 				</div>
 
 				<ul class="social">
-					<li><a class="social__link social__link_first" href="https://twitter.com/?lang=en/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-					<li><a class="social__link" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
-					<li><a class="social__link" href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a class="social__link social__link_first fa-twitter" href="https://twitter.com/?lang=en/" target="_blank"></a></li>
+					<li><a class="social__link fa-facebook-official" href="https://www.facebook.com/" target="_blank"></a></li>
+					<li><a class="social__link fa-instagram" href="https://www.instagram.com" target="_blank"></a></li>
 				</ul>
 			</div>
+			<div class="video_wrap">
+				<div class="wrap-flex ">
+					<h4 class="col-lg-6 col-md-8 col-sm-10 header__heading">See the unmatched beauty of the great lakes</h4>
 
-			<div class="wrap-flex">
-				<h4 class="col-lg-6 col-md-8 col-sm-10 header__heading">See the unmatched beauty of the great lakes</h4>
+					<div class="col-sm-12">
+						<div class="video">
+							<div class="video__start"></div>
+							<iframe id="iframe" src="https://www.youtube.com/embed/f77SKdyn-1Y" allowfullscreen></iframe>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="video">
-				<div class="video__start"></div>
-				<iframe id="iframe" src="https://www.youtube.com/embed/f77SKdyn-1Y" frameborder="0" allowfullscreen></iframe>
-			</div>
+
+
 
 		</header>
 		<!-- header end -->
@@ -117,52 +125,60 @@
 				<div class=" col-md-6 col-sm-12">
 					<div class="testimo__content">
 						<span class="slesh"></span>
-						<h6 class="h6 testimo__name">Lulu Hoffmann</h6>
-						<a href="#" class="testimo__job">Marketing Consultant at okodesign.net</a>
-						<p>If you are an entrepreneur, you know that your success cannot depend on the opinions of others. Like the wind, opinions change…like the weather, opinions chang selling brushes.</p>
+						<div class="testimo__author">
+							<div class="testimo__img_wrap"><img class="testimo__img" src="img/person/person-1.jpg" alt="Photo people"/></div>
+							<h6 class="h6 testimo__name">Lulu Hoffmann<a href="#" class="testimo__job">Marketing Consultant at okodesign.net</a></h6>
+						</div>
+						<p class="testimo__text">If you are an entrepreneur, you know that your success cannot depend on the opinions of others. Like the wind, opinions change…like the weather, opinions chang selling brushes.</p>
 						<ul class="testimo-soc">
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-linkedin-square"></i></a></li>
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a class="testimo-soc__link fa-linkedin-square" href="#"></a></li>
+							<li><a class="testimo-soc__link fa-twitter" href="#"></a></li>
+							<li><a class="testimo-soc__link fa-google-plus" href="#"></a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-12">
 					<div class="testimo__content testimo__content_second">
 						<span class="slesh"></span>
-						<h6 class="h6 testimo__name">Elsie Duncan</h6>
-						<a href="#" class="testimo__job">Marketing Consultant at okodesign.net</a>
-						<p>Ever heard of the Fuller Brush Man? You know, those legendary guys who came knocking on the front doors of America, selling brushes, mops and cleaners brushes.</p>
+						<div class="testimo__author">
+							<div class="testimo__img_wrap"><img class="testimo__img" src="img/person/person-2.jpg" alt="Photo people"/></div>
+							<h6 class="h6 testimo__name">Elsie Duncan<a href="#" class="testimo__job">Marketing Consultant at okodesign.net</a></h6>
+						</div>
+						<p class="testimo__text">Ever heard of the Fuller Brush Man? You know, those legendary guys who came knocking on the front doors of America, selling brushes, mops and cleaners brushes.</p>
 						<ul class="testimo-soc">
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-facebook-official"></i></a></li>
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-twitter"></i></a></li>
+							<li><a class="testimo-soc__link fa-facebook-official" href="#"></a></li>
+							<li><a class="testimo-soc__link fa-twitter" href="#"></a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-12">
 					<div class="testimo__content testimo__content_third">
 						<span class="slesh"></span>
-						<h6 class="h6 testimo__name">Dustin Gonzales</h6>
-						<a href="#" class="testimo__job">Marketing Consultant at okodesign.net</a>
-						<p>Do you remember the story of “The Wizard of Oz”? In this story we saw the characters of Dorothy, who had wanted to run away from home because she thought there was a better place somewhere.</p>
+						<div class="testimo__author">
+							<div class="testimo__img_wrap"><img class="testimo__img" src="img/person/person-3.jpg" alt="Photo people"/></div>
+							<h6 class="h6 testimo__name">Dustin Gonzales<a href="#" class="testimo__job">Marketing Consultant at okodesign.net</a></h6>
+						</div>
+						<p class="testimo__text">Do you remember the story of “The Wizard of Oz”? In this story we saw the characters of Dorothy, who had wanted to run away from home because she thought there was a better place somewhere.</p>
 						<ul class="testimo-soc">
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-facebook-official"></i></a></li>
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-linkedin-square"></i></a></li>
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a class="testimo-soc__link fa-facebook-official" href="#"></a></li>
+							<li><a class="testimo-soc__link fa-linkedin-square" href="#"></a></li>
+							<li><a class="testimo-soc__link fa-google-plus" href="#"></a></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-md-6 col-sm-12">
 					<div class="testimo__content testimo__content_fought">
 						<span class="slesh"></span>
-						<h6 class="h6 testimo__name">Laura Parks</h6>
-						<a href="#" class="testimo__job">Marketing Consultant at okodesign.net</a>
-						<p>They are big, bold and beautiful. Billboards have been around for quite a while. In almost all places nowadays lorem ipsum you can find billboards about every product there is in the market. No matter how you see it, billboard advertising is on the rise.</p>
+						<div class="testimo__author">
+							<div class="testimo__img_wrap"><img class="testimo__img" src="img/person/person-4.jpg" alt="Photo people"/></div>
+							<h6 class="h6 testimo__name">Laura Parks<a href="#" class="testimo__job">Marketing Consultant at okodesign.net</a></h6>
+						</div>
+						<p class="testimo__text">They are big, bold and beautiful. Billboards have been around for quite a while. In almost all places nowadays lorem ipsum you can find billboards about every product there is in the market. No matter how you see it, billboard advertising is on the rise.</p>
 						<ul class="testimo-soc">
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-facebook-official"></i></a></li>
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-linkedin-square"></i></a></li>
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a class="testimo-soc__link" href="#"><i class="fa fa-google-plus"></i></a></li>
+							<li><a class="testimo-soc__link fa-facebook-official" href="#"></a></li>
+							<li><a class="testimo-soc__link fa-linkedin-square" href="#"></a></li>
+							<li><a class="testimo-soc__link fa-twitter" href="#"></a></li>
+							<li><a class="testimo-soc__link fa-google-plus" href="#"></a></li>
 						</ul>
 					</div>
 				</div>
@@ -178,9 +194,9 @@
 
 			<div class="wrap-flex radio_wrap">
 
-				<input class="visible-sm plan__radio plan__radio_s"type="radio" name="plan__radio" id="radio-1">
+				<input class="visible-sm plan__radio plan__radio_s" type="radio" name="plan__radio" id="radio-1">
 				<label class="visible-sm plan__label" for="radio-1">Silver</label>
-				<input class="visible-sm plan__radio plan__radio_g"type="radio" name="plan__radio" id="radio-2" checked>
+				<input class="visible-sm plan__radio plan__radio_g" type="radio" name="plan__radio" id="radio-2" checked>
 				<label class="visible-sm plan__label" for="radio-2">Gold</label>
 				<input class="visible-sm plan__radio plan__radio_p" type="radio" name="plan__radio" id="radio-3">
 				<label class="visible-sm plan__label" for="radio-3">Platinum</label>
@@ -188,29 +204,38 @@
 				<div class="card_wrap">
 					<div class="card card_silver">
 						<h6 class="h6 card__name">Silver</h6>
-						<div class="card__number">49</div>
-						<div class="card__year">year</div>
-						<p class="card__text">Personal account</p>
-						<p class="card__text">25 GB Discspace</p>
-						<p class="card__text">50 Uploads per day</p>
+						<span class="card__dolor">$</span>
+						<span class="card__number">49</span>
+						<span class="card__year">year</span>
+						<ul class="card__list">
+							<li class="card__item">Personal account</li>
+							<li class="card__item">25 GB Discspace</li>
+							<li class="card__item">50 Uploads per day</li>
+						</ul>
 						<a href="#" class="btn">Purchase</a>
 					</div>
 					<div class="card card_gold">
 						<h6 class="h6 card__name">Gold</h6>
-						<div class="card__number">99</div>
-						<div class="card__year">year</div>
-						<p class="card__text">Personal account</p>
-						<p class="card__text">50 GB Discspace</p>
-						<p class="card__text">500 Uploads per day</p>
+						<span class="card__dolor">$</span>
+						<span class="card__number">99</span>
+						<span class="card__year">year</span>
+						<ul class="card__list">
+							<li class="card__item">Personal account</li>
+							<li class="card__item">50 GB Discspace</li>
+							<li class="card__item">500 Uploads per day</li>
+						</ul>
 						<a href="#" class="btn btn_dark">Purchase</a>
 					</div>
 					<div class="card card_plat">
 						<h6 class="h6 card__name">Platinum</h6>
-						<div class="card__number">299</div>
-						<div class="card__year">year</div>
-						<p class="card__text">Personal account</p>
-						<p class="card__text">500 GB Discspace</p>
-						<p class="card__text">Unlimited uploads per day</p>
+						<span class="card__dolor">$</span>
+						<span class="card__number">299</span>
+						<span class="card__year">year</span>
+						<ul class="card__list">
+							<li class="card__item">Personal account</li>
+							<li class="card__item">50 GB Discspace</li>
+							<li class="card__item">Unlimited uploads per day</li>
+						</ul>
 						<a href="#" class="btn">Purchase</a>
 					</div>
 				</div>
@@ -758,10 +783,12 @@
 			<h4 class="h4 heading touch__heading">Stay in touch</h4>
 
 			<div class="wrap-flex flex-start">
-				<div class="col-lg-4 visible-lg"><div class="touch__iphone"></div></div>
+				<div class="col-lg-4 visible-lg">
+					<div><img class="touch__img" src="img/iphone.png"></div>
+				</div>
 
 				<div class="touch col-lg-4 offset-lg-0 col-md-5 offset-md-1 col-sm-10 offset-sm-1">
-					<form action="" class="touch__form">
+					<form action="#" class="touch__form">
 						<input class="touch__input touch__input_name" type="text" placeholder="Name*" />
 						<input class="touch__input" type="email" placeholder="Email*"/>
 						<input class="touch__input touch__input_message" type="text" placeholder="Message*"/>
@@ -770,18 +797,18 @@
 				</div>
 
 				<div class="touch col-lg-3 offset-lg-1 col-md-5  offset-md-0 col-sm-10  offset-sm-1">
-					<div class="touch__adress">2300 W Arbutus Dr Citrus Springs, FL 34434, USA</div>
+					<adress class="touch__adress">2300 W Arbutus Dr Citrus Springs, FL 34434, USA</adress>
 					<a class="touch__email" href="mailto:http://contact@hofmannui.net">contact@hofmannui.net</a>
 					<div class="touch__tel_wrap">
 						<a class="touch__tel" href="tel:793-891-7938">793-891-7938,</a>
 						<a class="touch__tel" href="tel:952-775-6021">952-775-6021</a>
 					</div>
 					<ul class="touch-soc">
-						<li><a class="touch-soc__link" href="#"><i class="fa fa-pinterest"></i></a></li>
-						<li><a class="touch-soc__link" href="#"><i class="fa fa-linkedin-square"></i></a></li>
-						<li><a class="touch-soc__link" href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a class="touch-soc__link" href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a class="touch-soc__link" href="#"><i class="fa fa-facebook-official"></i></a></li>
+						<li><a class="touch-soc__link fa-pinterest" href="#"></a></li>
+						<li><a class="touch-soc__link fa-linkedin-square" href="#"></a></li>
+						<li><a class="touch-soc__link fa-google-plus" href="#"></a></li>
+						<li><a class="touch-soc__link fa-twitter" href="#"></a></li>
+						<li><a class="touch-soc__link fa-facebook-official" href="#"></a></li>
 					</ul>
 				</div>
 
@@ -800,7 +827,6 @@
 
 		<!-- section map start -->
 		<footer class="footer">
-
 			<div class="wrap-flex footer_wrap">
 
 				<h5 class="h5 footer__heading col-sm-12">Hofmann</h5>
@@ -826,12 +852,11 @@
 					</div>
 				</div>
 
-
 				<div class="footer-copyright col-sm-12">© 2016 Created by Goldenfox</div>
 
 				<div class="footer-form_wrap col-md-3 col-sm-12">
 					<h6 class="h6 footer-headings">SUBSCRIBE TO OUR NEWS</h6>
-					<form class="footer-form" action="">
+					<form class="footer-form" action="#">
 						<input class="footer-form__text" type="text" placeholder="Your email" />
 						<button class="footer-form__button"></button>
 					</form>
@@ -840,43 +865,36 @@
 				<div class="footer-soc_wrap col-md-4 col-sm-12">
 					<h6 class="h6 footer-headings">FOLLOW US</h6>
 					<ul class="footer-soc">
-						<li><a class="footer-soc__link" href="#"><i class="fa fa-pinterest"></i></a></li>
-						<li><a class="footer-soc__link" href="#"><i class="fa fa-linkedin-square"></i></a></li>
-						<li><a class="footer-soc__link" href="#"><i class="fa fa-google-plus"></i></a></li>
-						<li><a class="footer-soc__link" href="#"><i class="fa fa-twitter"></i></a></li>
-						<li><a class="footer-soc__link" href="#"><i class="fa fa-facebook-official"></i></a></li>
-						<li><a class="footer-soc__link" href="#"><i class="fa fa-facebook-official"></i></a></li>
+						<li><a class="footer-soc__link fa-pinterest" href="#"></a></li>
+						<li><a class="footer-soc__link fa-linkedin-square" href="#"></a></li>
+						<li><a class="footer-soc__link fa-google-plus" href="#"></a></li>
+						<li><a class="footer-soc__link fa-twitter" href="#"></a></li>
+						<li><a class="footer-soc__link fa-facebook-official" href="#"></a></li>
+						<li><a class="footer-soc__link fa-instagram" href="#"></a></li>
 					</ul>
 				</div>
 
 			</div>
 		</footer>
 		<!-- section map end -->
+
 	</div>
 
 
 	<!--buttot to top-->
 	<div class="top" title="Наверх"><i class="fa fa-angle-double-up"></i></div>
 
-
 	<!--for modal windows-->
 	<div class="hidden"></div>
 
-
-	<!-- HelloPreload http://hello-site.ru/preloader/ -->
+	<!-- preloader -->
 	<div id="hellopreloader"><div id="hellopreloader_preload"></div></div>
-	<!--<script type="text/javascript">var hellopreloader = document.getElementById("hellopreloader_preload");function fadeOutnojquery(el){el.style.opacity = 1;var interhellopreloader = setInterval(function(){el.style.opacity = el.style.opacity - 0.05;if (el.style.opacity <=0.05){ clearInterval(interhellopreloader);hellopreloader.style.display = "none";}},16);}window.onload = function(){setTimeout(function(){fadeOutnojquery(hellopreloader);},1000);};</script>-->
-	<!-- HelloPreload http://hello-site.ru/preloader/ -->
 
-                             	 <!-- Links -->
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+								<!-- Links Scripts -->
+
 	<link rel="stylesheet" href="css/style.min.css">
 
-								<!-- Scripts -->
-
-    <!-- HTML5 Shiv - полифил, позволяющий обеспечивать базовые стили HTML5 для
-	IE 6-8, Safari 4.x, Firefox 3.x. и iPhone 3.x. -->
 	<!--[if lt IE 9]>
 	<script src="js/html5shiv/es5-shim.min.js"></script>
 	<script src="js/html5shiv/html5shiv.min.js"></script>
@@ -888,37 +906,10 @@
 	<!-- include custom JavaScript -->
 	<script type="text/javascript">window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
 	<script type="text/javascript" src="js/jquery.main.min.js" defer></script>
-
 	<!-- include Goggle Maps API -->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3D7OR3uR7q-aqJWW4HIRyDJxuKfH6d6E&callback=initMap" async defer></script>
-	<script>
-		var map;
-		function initMap() {
-			map = new google.maps.Map(document.getElementById('map'), {
-				center: new google.maps.LatLng(29.017224, -82.473262),
-				zoom: 17,
-				mapTypeControl: false,
-				zoomControl: true,         // + -
-				scaleControl: false,
-				fullscreenControl: true,
-				streetViewControl: false,  // yellow men
-				scrollwheel: false,        // overlay
+	<script type="text/javascript" src="js/map.min.js" defer></script>
 
-
-				styles: [{"featureType": "all", "elementType": "labels.text.fill", "stylers": [{"saturation": 36}, {"color": "#333333"}, {"lightness": 40}]},
-					{"featureType": "all", "elementType": "labels.text.stroke", "stylers": [{"visibility": "on"}, {"color": "#ffffff"}, {"lightness": 16}]},
-					{"featureType": "all", "elementType": "labels.icon", "stylers": [{"visibility": "off"}]},
-					{"featureType": "administrative", "elementType": "geometry.stroke", "stylers": [{"lightness": 17}, {"weight": 1.2}, {"color": "#e5e5e5"}]},
-					{"featureType": "landscape.man_made", "elementType": "geometry.fill", "stylers": [{"color": "#e5e5e5"}]},
-					{"featureType": "road.highway", "elementType": "geometry.fill", "stylers": [{"color": "#ffffff"}, {"lightness": 17}]},
-					{"featureType": "road.local", "elementType": "labels.text.fill", "stylers": [{"color": "#2b2b2b"}]}]
-			});
-			var center = map.getCenter();
-			google.maps.event.addDomListener(window, 'resize', function() {
-				map.setCenter(center);
-			});
-		}
-	</script>
 
 </body>
 </html>

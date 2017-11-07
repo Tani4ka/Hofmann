@@ -172,14 +172,21 @@
     padding: 28px 0 0;
   }
 
+  .wrap-flex {
+    @include media(">=desktop") {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
   .heading {
     margin-bottom: 20px;
   }
 
   &__content {
     position: relative;
-    padding: 37px 40px 25px 166px;
-    margin: 0 0 49px 15px;
+    padding: 44px 40px 25px 42px;
+    margin: 0 15px 49px 15px;
     height: 91%;
     display: flex;
     flex-direction: column;
@@ -191,48 +198,50 @@
       }
     }
     @include media("<desktop") {
-      padding: 31px 40px 18px 104px;
-      margin: 0 0 5px 15px;
+      padding: 32px 40px 23px 14px;
+      margin:  0 0 0 15px;
       line-height: 1.5em;
     }
     @include media("<tablet") {
-      padding: 2px 10px 18px 58px;
-      margin: 0 0 17px 8px;
+      padding: 8px 10px 18px 0;
+      margin: 0 0 15px 10px;
     }
 
-    &:before {
-      content: '';
-      @include size(96px);
-      position: absolute;
-      top: 44px;
-      left: 41px;
-      border-radius: 10em;
-      background: $gray url("../img/person/person-1.jpg") no-repeat;
-      background-size: cover;
+    //&:before {
+    //  content: '';
+    //  @include size(96px);
+    //  position: absolute;
+    //  top: 44px;
+    //  left: 41px;
+    //  border-radius: 10em;
+    //  background: $gray url("../img/person/person-1.jpg") no-repeat;
+    //  background-size: cover;
+    //
+    //  @include media("<desktop") {
+    //    @include size(62px);
+    //    top: 32px;
+    //    left: 14px;
+    //  }
+    //  @include media("<tablet") {
+    //    @include size(48px);
+    //    top: 10px;
+    //    left: 0;
+    //  }
+    //}
 
-      @include media("<desktop") {
-        @include size(62px);
-        top: 32px;
-        left: 14px;
-      }
-      @include media("<tablet") {
-        @include size(48px);
-        top: 10px;
-        left: 0;
-      }
-    }
-    &_second:before  {
-      background: $gray url("../img/person/person-2.jpg") no-repeat;
-      background-size: cover;
-    }
-    &_third:before  {
-      background: $gray url("../img/person/person-3.jpg") no-repeat;
-      background-size: cover;
-    }
-    &_fought:before  {
-      background: $gray url("../img/person/person-4.jpg") no-repeat;
-      background-size: cover;
-    }
+
+    //&_second:before  {
+    //  background: $gray url("../img/person/person-2.jpg") no-repeat;
+    //  background-size: cover;
+    //}
+    //&_third:before  {
+    //  background: $gray url("../img/person/person-3.jpg") no-repeat;
+    //  background-size: cover;
+    //}
+    //&_fought:before  {
+    //  background: $gray url("../img/person/person-4.jpg") no-repeat;
+    //  background-size: cover;
+    //}
 
     .slesh {
       position: absolute;
@@ -273,8 +282,44 @@
     }
   }
 
+  &__img_wrap {
+    display: inline-block;
+    @include size(96px);
+
+    @include media("<desktop") {
+      @include size(62px);
+    }
+    @include media("<tablet") {
+      @include size(48px);
+    }
+  }
+  &__img {
+    max-width: 100%;
+  }
+
+
+  &__text {
+    padding-left: 126px;
+    margin-top: -10px;
+
+    @include media("<desktop") {
+      padding-left: 90px;
+    }
+    @include media("<tablet") {
+      padding-left: 65px;
+    }
+  }
   &__name {
-    margin: 7px 0 0;
+    margin: 0 0 0 25px;
+    display: inline-block;
+    vertical-align: top;
+
+    @include media("<desktop") {
+      margin: 4px 0 0 25px;
+    }
+    @include media("<tablet") {
+      margin: 0 0 0 15px;
+    }
   }
 
   &__job {
@@ -284,11 +329,10 @@
     text-decoration: none;
     border-bottom: 1px solid $light-gray;
     padding-bottom: 15px;
-    margin-bottom: 32px;
 
     @include media("<desktop") {
       padding-bottom: 10px;
-      margin: 6px 0 13px;
+      margin: 10px 0 22px;
     }
 
     &:hover,
@@ -298,18 +342,26 @@
   }
 
   .testimo-soc {
+    padding-left: 126px;
     margin-top: auto;
     display: flex;
     @extend %listreset;
 
     @include media("<desktop") {
+      padding-left: 90px;
       margin-top: 16px;
+    }
+    @include media("<tablet") {
+      padding-left: 65px;
     }
 
     &__link {
       color: $accent;
       margin-right: 12px;
       font-size: 22px;
+      font-family: 'FontAwesome';
+      text-decoration: none;
+      @extend %transition;
 
       &:hover,
       &:focus {
@@ -339,6 +391,14 @@
     text-transform: uppercase;
     text-align: center;
     align-self: center;
+    transition: all 0.3s ease;
+
+    &:focus {
+     outline: none;
+    }
+    &:hover {
+      background: $accent;
+    }
   }
 
   .plan__radio + .plan__label {
@@ -471,8 +531,8 @@
 
   &__number {
     position: relative;
-    display: inline;
     padding-left: 10px;
+    display: inline-block;
     font-size: 4em;
     font-family: 'MontserratBold';
     line-height: 1.3em;
@@ -485,27 +545,47 @@
       line-height: 0.3em;
     }
 
-    &:before {
-      content: '$';
-      position: absolute;
-      top: -2px;
-      left: -10px;
-      font-size: 24px;
-      font-family: 'MontserratRegular';
+    //&:before {
+    //  content: '$';
+    //  position: absolute;
+    //  top: -2px;
+    //  left: -10px;
+    //  font-size: 24px;
+    //  font-family: 'MontserratRegular';
+    //
+    //  @include media("<desktop") {
+    //    top: 5px;
+    //    left: 0;
+    //    font-size: 11px;
+    //  }
+    //  @include media("<tablet") {
+    //    top: 14px;
+    //  }
+  }
 
-      @include media("<desktop") {
-        top: 5px;
-        left: 0;
-        font-size: 11px;
-      }
-      @include media("<tablet") {
-        top: 14px;
-      }
+  &__dolor {
+    position: relative;
+    top: 22px;
+    left: 0;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 24px;
+    font-family: 'MontserratRegular';
+
+    @include media("<desktop") {
+      top: 5px;
+      font-size: 11px;
+    }
+    @include media("<tablet") {
+      vertical-align: top;
+      top: -14px;
     }
   }
 
+
   &__year {
     margin-bottom: 27px;
+    display: block;
     font-size: 1.125em;
     font-family: 'SourceSansProBold';
     font-size: 1.5em;
@@ -521,7 +601,10 @@
     }
   }
 
-  &__text {
+  &__list {
+    @extend %listreset;
+  }
+  &__item {
     text-transform: capitalize;
 
     @include media("<desktop") {
@@ -547,7 +630,7 @@
 /* portfolio section */
 .portf {
   position: relative;
-  padding: 35px 0 75px;
+  padding: 35px 0 71px;
 
   @include media("<desktop") {
     padding: 5px 0 71px;
@@ -1087,7 +1170,7 @@
 
 /* touch */
 .touch_wrap {
-  margin: 62px 0 0;
+  margin: 70px 0 0;
 
   @include media("<desktop") {
     margin: 30px 0 0;
@@ -1097,7 +1180,7 @@
   }
 }
 .touch {
-  margin-top: 63px;
+  margin-top: 72px;
   margin-bottom: 67px;
 
   @include media("<desktop") {
@@ -1113,13 +1196,12 @@
 
   &__heading {
     margin-bottom: 0;
+    line-height: 1em;
   }
 
-  &__iphone {
-    height: 100%;
-    background: url("../img/iphone.png") no-repeat;
-    background-size: contain;
-    background-position: 50%  100%;
+  &__img {
+    max-width: 100%;
+    display: block;
   }
 
   &__form {
@@ -1267,6 +1349,8 @@
 
     &__link {
       color: $gray;
+      font-family: 'FontAwesome';
+      text-decoration: none;
       @extend %transition;
 
       &:hover,

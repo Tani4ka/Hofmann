@@ -68,10 +68,12 @@ $media-expressions: (
 /* ---------------------------------------------------------
     4. Site styles
    ---------------------------------------------------------*/
+@import 'vendors/hofmann-icon';
+@import 'vendors/slick_css';
+@import 'vendors/font-awesome';
+
 @import 'layout/common';
 @import 'layout/header';
 @import 'layout/main';
 @import 'layout/footer';
 
-@import 'vendors/hofmann-icon';
-@import 'vendors/slick_css';

@@ -227,6 +227,8 @@
 
     &__link {
       color: $accent;
+      font-family: 'FontAwesome';
+      text-decoration: none;
       @extend %transition;
 
       @include media("<tablet") {
@@ -239,3 +241,5 @@
     }
   }
 }
+
+

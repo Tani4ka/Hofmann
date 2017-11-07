@@ -14,11 +14,11 @@
     line-height: 1.1em;
 
     @include media("<desktop") {
-      margin: 62px auto 34px;
+      margin: 0 auto 34px;
       font-size: 2.9em;
     }
     @include media("<tablet") {
-      margin: 42px auto 57px;
+      margin: 0 auto 57px;
       line-height: 1.25em;
       font-size: 2.3em;
     }
@@ -27,7 +27,20 @@
     }
   }
 }
+.video_wrap {
+  width: 100%;
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
 
+  @include media("<desktop") {
+    top: 138px;
+  }
+  @include media("<tablet") {
+    top: 135px;
+  }
+}
 .video {
   position: relative;
   width: 555px;
@@ -92,12 +105,13 @@
 
   .fluid-width-video-wrapper {
     iframe {
+      margin: 0;
       min-height: auto;
       width: 555px;
       height: 324px;
       left: 50%;
       transform: translateX(-50%);
-      margin: 0;
+      border: none;
 
       @include media("<desktop") {
         width: 345px;
@@ -146,6 +160,8 @@
     text-decoration: none;
     text-transform: uppercase;
     font-size: 1.75em;
+    font-family: 'FontAwesome';
+    @extend %transition;
 
     @include media(">=desktop") {
       margin-left: 45px;
@@ -160,10 +176,8 @@
         color: $gray;
       }
     }
-  }
-  li:hover,
-  li:focus {
-    .social__link {
+    &:hover,
+    &:focus {
       color: $accent;
     }
   }
@@ -296,6 +310,7 @@
     text-decoration: none;
     font-size: 1.125em;
     text-transform: uppercase;
+    @extend %transition;
 
     @include media("<desktop") {
       padding: 10px 19px;
