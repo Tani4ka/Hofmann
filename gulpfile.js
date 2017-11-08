@@ -115,7 +115,7 @@ gulp.task('deploy', function() {
 		'dist/.htaccess',  // .htaccess - для работы с сервером, для кеширования
 	];
 	return gulp.src(globs, {buffer: false})
-		.pipe(conn.dest('/public_html/hofmann'));  // change name of progect folder
+		.pipe(conn.dest('/public_html/hofman'));  // change name of progect folder
 
 });
 
